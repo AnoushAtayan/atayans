@@ -1,0 +1,88 @@
+{%extends 'shop/base.html'%}
+{%load staticfiles%}
+{% block title %}EasyToShop{% endblock %}
+
+
+{% block body %}
+
+     <!--Banner-->
+    <div class="banner">
+      <div class="bg-color">
+        <div class="container">
+          <div class="row">
+            <div class="banner-text text-center">
+              <div class="text-border" style="border-color: transparent">
+                <h2 class="text-dec">Do it easy!</h2>
+              </div>
+              <div class="intro-para text-center quote">
+                <marquee  class="big-text" align ="middle" behavior="slide" loop = "1" hspace ="18%"scrollamount="14">Whatever you've got in mind, we've got inside</marquee>
+
+              </div>
+
+             <li al><a href="{% url 'home' %}" class="btn-group-lg btn-submit" style="text-decoration: none">Get started</a></li>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    <!--/ Banner-->
+
+    <!--Contact-->
+    <section id ="contact" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="header-section text-center">
+            <h2>Contact Us</h2>
+          </div>
+          <div id="sendmessage">Your message has been sent. Thank you!</div>
+          <div id="errormessage"></div>
+          <form action="" method="post" role="form" class="contactForm">
+              <div class="col-md-6 col-sm-6 col-xs-12 left">
+                <div class="form-group">
+                    <input type="text" name="name" class="form-control form" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                    <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                    <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                    <div class="validation"></div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-sm-6 col-xs-12 right">
+                <div class="form-group">
+                    <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                    <div class="validation"></div>
+                </div>
+              </div>
+
+              <div class="col-xs-12">
+                <!-- Button -->
+                <button type="submit" id="submit" name="submit" class="form contact-form-button light-form-button oswald light">SEND EMAIL</button>
+              </div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+    <!--/ Contact-->
+    <!--Footer-->
+    <footer id="footer" class="footer">
+      <div class="container text-center">
+      <ul class="social-links">
+        <li><a href="#link"><i class="fa fa-twitter fa-fw"></i></a></li>
+        <li><a href="#link"><i class="fa fa-facebook fa-fw"></i></a></li>
+        <li><a href="#link"><i class="fa fa-linkedin fa-fw"></i></a></li>
+      </ul>
+        ©2017 "EasyToShop" team. All rights reserved
+
+      </div>
+    </footer>
+    <!--/ Footer-->
+{% endblock %}

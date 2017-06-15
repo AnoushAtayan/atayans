@@ -1,0 +1,81 @@
+{%load staticfiles%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href={% static "shop/img/logo.png"%}
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans">
+    <link rel="stylesheet" type="text/css" href="{% static "shop/css/font-awesome.min.css"%}">
+    <link rel="stylesheet" type="text/css" href="{% static "shop/css/bootstrap.min.css"%}">
+    <link rel="stylesheet" type="text/css" href="{% static "shop/css/imagehover.min.css"%}">
+    <link rel="stylesheet" type="text/css" href="{% static "shop/css/style.css"%}">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+
+   <title>
+    {% block title %}{% endblock %}
+  </title>
+
+
+  </head>
+
+
+<body>
+    <!--Navigation bar-->
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background: black">
+      <div class="container">
+        <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{% url 'home' %}">
+                    <img id="logo"  src="{%  static 'shop/img/logo.png'%}" width="50" height="35">
+       </a>
+            <form class="navbar-form navbar-left" role="search" method="get" action="{% url "store_search" %}">
+                <div class="form-group">
+
+                    <input type="text" class="form-control" name="q"  placeholder="Search" value="{{ request.GET.q }}" style="margin-top: 10px">
+                    </div>
+                    <button type="submit" class="btn btn-default" style="height: 35px; width: 30px; margin-top: 10px; padding: 0">
+                     <span class="glyphicon glyphicon-search"></span>  </button>
+
+             </form>
+
+        </div>
+
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url "store_list" %}">Stores</a></li>
+                <li><a href="#forum">Forum</a></li>
+                <li><a href="#" data-target="#login" data-toggle="modal">Sign in</a></li>
+                <li><a href="#footer">Contuct us</a></li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+    <!--/ Navigation bar-->
+
+
+   <script src="{% static "shop/js/jquery.min.js"%}"></script>
+   <script src="{% static "shop/js/jquery.easing.min.js"%}"></script>
+   <script src="{% static "shop/js/bootstrap.min.js"%}"></script>
+   <script src="{% static "shop/js/custom.js"%}"></script>
+   <script src="{% static "shop/contactform/form.js"%}"></script>
+
+
+{% block body %}
+
+{% endblock %}
+
+
+
+ </body>
+</html>
