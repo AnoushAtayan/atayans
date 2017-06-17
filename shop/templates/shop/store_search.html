@@ -2,54 +2,39 @@
 
 {% block title %}Search results{% endblock %}
 
-{% block body %}
-   <div class="container" style="padding-top: 100px; padding-left: 0px; padding-right: 0px;">
-      <div class="row" >
-        <div class="col-lg-3" style="padding: 0px">
-          <ul style="padding-top: 100px; font-family: Satisfy; font-size: 30px">
-                  <li>
-                        <input type="radio" id="f-option" name="selector">
-                        <label for="f-option">All</label>
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="list-group" style="text-after-overflow: none">
+                    <a href="#" class="list-group-item">All</a>
+                    <a href="#" class="list-group-item">General</a>
+                    <a href="#" class="list-group-item">Men </a>
+                    <a href="#" class="list-group-item">Women</a>
+                    <a href="#" class="list-group-item">Maternity </a>
+                    <a href="#" class="list-group-item">Kids </a>
+                    <a href="#" class="list-group-item">Sport </a>
+                    <a href="#" class="list-group-item">Shoes </a>
+                    <a href="#" class="list-group-item">Accessories</a>
+                    <a href="#" class="list-group-item">Underwear </a>
+                </div>
+            </div>
 
-                        <div class="check"></div>
-                  </li>
-                 <li>
-                        <input type="radio" id="f-option" name="selector">
-                        <label for="f-option">Genaral</label>
-
-                        <div class="check"></div>
-                  </li>
-                  <li>
-                        <input type="radio" id="f-option" name="selector">
-                        <label for="f-option">Man</label>
-
-                        <div class="check"></div>
-                  </li>
-                  <li>
-                        <input type="radio" id="f-option" name="selector">
-                        <label for="f-option">Women</label>
-
-                        <div class="check"></div>
-                  </li>
-                 <li>
-                        <input type="radio" id="f-option" name="selector">
-                        <label for="f-option">Kids</label>
-
-                        <div class="check"></div>
-                  </li>
-             </ul>
-        </div>
           <div class="col-lg-9">
               {% if request.GET.q|length  == 0%}
                   <h2 style="text-align: left; font-family: 'Arial'; font-size:20px" >  Please enter the name of store</h2>
               {% else %}
                   <h2 style="text-align: left; font-family: 'Arial'; font-size:20px" >  Search results for "{{ request.GET.q }}"</h2>
                   {% for store in stores %}
-                  <div class="col-lg-6" style="padding:10px">
+                  <div class="col-lg-6">
                       <div class="thumbnail">
-                          {{ store.store_name }}
-                          <a href="{{ store.store_link }}" target="_blank" ><img src="{{ store.store_logo }}" class="img-responsive"></a>
-                          <a href="{% url 'comments' store_id=store.id %}" class="btn btn-primary btn-sm" role="button">View Details</a>
+                          <div class="showcase-item-header">
+                              {{ store.store_name }}
+                          </div>
+                          <a href="{% url 'comments' store_id=store.id %}" class="showcase-item-header-link" target="_blank">Reviews</a>
+                          <div class="showcase-item-thumbnail">
+                              <a href="{{ store.store_link }}" target="_blank" ><img src="{{ store.store_logo }}" class="img-responsive"></a>
+                          </div>
                       </div>
                   </div>
                   {% endfor %}
@@ -62,3 +47,4 @@
 
 
 {% endblock %}
+</body>

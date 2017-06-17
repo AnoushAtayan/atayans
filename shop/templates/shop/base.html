@@ -16,6 +16,10 @@
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
+     <!--Google fonts link-->
+    <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans' rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Satisfy' rel="stylesheet" type="text/css">
+
 
    <title>
     {% block title %}{% endblock %}
@@ -25,7 +29,7 @@
   </head>
 
 
-<body>
+<body >
     <!--Navigation bar-->
     <nav class="navbar navbar-inverse navbar-fixed-top" style="background: black">
       <div class="container">
@@ -56,7 +60,7 @@
                 <li><a href="{% url "store_list" %}">Stores</a></li>
                 <li><a href="#forum">Forum</a></li>
                 <li><a href="#" data-target="#login" data-toggle="modal">Sign in</a></li>
-                <li><a href="#footer">Contuct us</a></li>
+                <li><a href="{% url 'home' %}#footer">Contuct us</a></li>
             </ul>
         </div>
       </div>
@@ -71,7 +75,7 @@
    <script src="{% static "shop/contactform/form.js"%}"></script>
 
 
-{% block body %}
+{% block content %}
 
 {% endblock %}
 
