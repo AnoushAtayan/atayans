@@ -1,5 +1,14 @@
 (function ($) {
 
+    //Search
+    $(".form-control").on('click', function () {
+        $(".form-control").css('background-color', 'white');
+         $(".form-control").removeAttr('placeholder');
+
+
+
+    })
+
     // Navigation scrolls
     $(".navbar-nav li a").on('click', function(event) {
         $('.navbar-nav li').removeClass('active');

@@ -20,10 +20,23 @@
                 </div>
             </div>
 
-        
+
           <div class="col-lg-9">
               {% if request.GET.q|length  == 0%}
-                  <h2 style="text-align: left; font-family: 'Arial'; font-size:20px" >  Please enter the name of store</h2>
+                  <h2 class="caption">Find the store fitting your style</h2>
+                  {% for store in stores %}
+                      <div class="col-lg-6">
+                          <div class="thumbnail">
+                              <div class="showcase-item-header">
+                                  {{ store.store_name }}
+                              </div>
+                              <a href="{% url 'comments' store_id=store.id %}" class="showcase-item-header-link" target="_blank">Reviews</a>
+                              <div class="showcase-item-thumbnail">
+                                  <a href="{{ store.store_link }}" target="_blank" ><img src="{{ store.store_logo }}" class="img-responsive"></a>
+                              </div>
+                          </div>
+                      </div>
+                  {% endfor %}
               {% else %}
                   <h2 style="text-align: left; font-family: 'Arial'; font-size:20px" >  Search results for "{{ request.GET.q }}"</h2>
                   {% for store in stores %}

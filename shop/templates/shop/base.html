@@ -34,24 +34,20 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" style="background: black">
       <div class="container">
         <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="{% url 'home' %}">
-                    <img id="logo"  src="{%  static 'shop/img/logo.png'%}" width="50" height="35">
-       </a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img id="logo"  src="{%  static 'shop/img/logo.png'%}" width="50" height="35">
+            </a>
             <form class="navbar-form navbar-left" role="search" method="get" action="{% url "store_search" %}">
                 <div class="form-group">
-
-                    <input type="text" class="form-control" name="q"  placeholder="Search" value="{{ request.GET.q }}" style="margin-top: 10px">
-                    </div>
-                    <button type="submit" class="btn btn-default" style="height: 35px; width: 30px; margin-top: 10px; padding: 0">
-                     <span class="glyphicon glyphicon-search"></span>  </button>
+                    <input type="text" class="form-control"  name="q"  placeholder="Search"  value="{{ request.GET.q }}" style="margin-top: 10px; background-color: #e5e5e5 ; border: none">
+                </div>
 
              </form>
-
         </div>
 
 
@@ -72,7 +68,7 @@
    <script src="{% static "shop/js/jquery.easing.min.js"%}"></script>
    <script src="{% static "shop/js/bootstrap.min.js"%}"></script>
    <script src="{% static "shop/js/custom.js"%}"></script>
-   <script src="{% static "shop/contactform/form.js"%}"></script>
+   <script src="{% static "shop/js/main.js"%}"></script>
 
 
 {% block content %}
