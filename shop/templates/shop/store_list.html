@@ -9,21 +9,7 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-lg-2">
-                    <div class="list-group" style="text-after-overflow: none">
-                        <a href="#" class="list-group-item">All</a>
-                        <a href="#" class="list-group-item">General</a>
-                        <a href="#" class="list-group-item">Men </a>
-                        <a href="#" class="list-group-item">Women</a>
-                        <a href="#" class="list-group-item">Maternity </a>
-                        <a href="#" class="list-group-item">Kids </a>
-                        <a href="#" class="list-group-item">Sport </a>
-                        <a href="#" class="list-group-item">Shoes </a>
-                        <a href="#" class="list-group-item">Accessories</a>
-                        <a href="#" class="list-group-item">Underwear </a>
-                    </div>
-                </div>
-
+                {%include 'shop/store_groups.html'%}
               <div class="col-lg-9">
                   <h2 class="caption">Find the store fitting your style</h2>
                   {% for store in stores %}
